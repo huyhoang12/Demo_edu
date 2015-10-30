@@ -1,0 +1,15 @@
+<%= form_for(@comment ||= Comment.new, html: { multipart: true }) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+
+<div><%= f.hidden_field :entry_id, value: entry.id %></div>
+<div class="col-md-1">
+	<span class="pull-right">
+		<%= gravatar_for current_user, size: 30 %>
+	</span>
+</div>
+<div class="col-md-8">
+	<%= f.text_field :content, placeholder: "Write a comment...", class: "form-control comment_field" %>
+</div>
+
+<% end %>
+

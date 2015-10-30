@@ -1,0 +1,11 @@
+<div id="comment-<%= comment.id %>">
+	<%= link_to gravatar_for(comment.user, size: 30), comment.user %>
+	<div class ="row">
+		<span class="user"><%= link_to comment.user.name, comment.user %>: <%= comment.content %></span>
+	</div>
+	<div class="row">
+		<span class="timestamp">
+			Commented <%= time_ago_in_words(comment.created_at) %> ago.
+		</span>
+	</div>
+</div>
